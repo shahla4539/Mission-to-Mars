@@ -88,11 +88,11 @@ def mars_facts():
         df = pd.read_html('https://data-class-mars-facts.s3.amazonaws.com/Mars_Facts/index.html')[0]
 
     except BaseException:
-        return None
-
+        # return None
+  
     # Assign columns and set index of dataframe
-    df.columns=['Description', 'Mars', 'Earth']
-    df.set_index('Description', inplace=True)
+        df.columns=['Description', 'Mars', 'Earth']
+        df.set_index('Description', inplace=True)
 
     # Convert dataframe into HTML format, add bootstrap
     return df.to_html(classes="table table-striped")
